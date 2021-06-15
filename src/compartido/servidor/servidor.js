@@ -8,9 +8,9 @@ function crearServidor(port) {
 
   app.use(express.json());
 
-  /* app.use('/usuarios', crearRouterRegistro())
-       .use('/reserva', crearRouterReserva())
-       .use('/recordatorios', crearRouterRecordatorios()) */
+  app.use('/usuarios', crearRouterRegistro())
+     .use('/reserva', crearRouterReserva())
+     .use('/recordatorios', crearRouterRecordatorios())
 
   return new Promise((resolve, reject) => {
     const server = app
