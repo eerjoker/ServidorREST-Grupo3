@@ -1,5 +1,5 @@
 import express from 'express'
-import crearFactoryCU from '../CUFactory.js'
+import crearFactoryCU from '../negocio/factoryCUReservas.js'
 
 const factoryCU = crearFactoryCU()
 
