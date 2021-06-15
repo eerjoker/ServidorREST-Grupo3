@@ -1,5 +1,5 @@
-import express from "express";
 import crearFactoryCU from "../negocio/factoryCUReservas.js";
+import express from "express";
 
 const factoryCU = crearFactoryCU();
 

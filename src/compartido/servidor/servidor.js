@@ -1,7 +1,7 @@
-import express from "express";
 import { crearRouterRegistro } from "../../usuarios/ruteo/registroRouter.js";
 import { crearRouterReserva } from "../../reservas/ruteo/reservaRouter.js";
 import { crearRouterRecordatorios } from "../../reservas/ruteo/recordatoriosRouter.js";
+import express from "express";
 
 function crearServidor(port) {
   const app = express();

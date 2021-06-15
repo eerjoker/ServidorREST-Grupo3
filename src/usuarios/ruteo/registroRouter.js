@@ -1,5 +1,5 @@
-import express from 'express'
 import { crearFactoryCU }  from '../negocio/factoryCUUsuarios.js'
+import express from 'express'
 
 const registro = crearFactoryCU().crearCURegistro()
 
