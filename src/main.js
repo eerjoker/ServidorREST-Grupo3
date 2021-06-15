@@ -1,3 +1,3 @@
-import { crearServidorFactory } from "./compartido/servidor/servidorFactory";
+import { crearServidorFactory } from "./compartido/servidor/servidorFactory.js";
 
-const servidor = crearServidorFactory().crearServidor()
+const servidor = crearServidorFactory().crearServidor();
