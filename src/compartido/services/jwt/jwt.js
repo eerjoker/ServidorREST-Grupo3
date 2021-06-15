@@ -1,3 +1,5 @@
+// Ivan Riboldi
+
 import dotenv from "dotenv";
 import jwt from "jwt-simple";
 import moment from "moment";

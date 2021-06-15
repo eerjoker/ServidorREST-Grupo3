@@ -1,3 +1,5 @@
+// Esteban Rivera
+
 import { crearAdministradorReglas } from './administradores/AdministradorReglas.js'
 import { crearAdministradorEventos } from './administradores/AdministradorEventos.js'
 

@@ -1,3 +1,5 @@
+// Ezequiel Salomon
+
 import nodemailer from 'nodemailer';
 import {crearErrorMailNoEnviado} from '../../errors/errorMailNoEnviado.js'
 
