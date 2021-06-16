@@ -1,4 +1,4 @@
-import crearFactoryCU from '../negocio/factoryCUReservas.js'
+import { crearFactoryCU } from '../negocio/factoryCUReservas.js'
 import express from 'express'
 
 const factoryCU = crearFactoryCU()
@@ -10,7 +10,7 @@ function crearRouterRecordatorios() {
     try {
       const CU_EnviarRecordatorios = factoryCU.crearCUEnviarRecordatorios()
       await CU_EnviarRecordatorios.ejecutar(req.body)
-      res.status(201).json({ message: 'Mails enviados a los usuarios' })
+      res.status(200).json({ message: 'Recordatorios enviados' })
     } catch (err) {
       next(err)
     }

@@ -8,4 +8,4 @@ function crearFactoryAgenda() {
   }
 }
 
-export default { crearFactoryAgenda }
+export { crearFactoryAgenda }

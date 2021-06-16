@@ -1,3 +1,5 @@
 import { crearServidorFactory } from "./compartido/servidor/servidorFactory.js";
 
-const servidor = crearServidorFactory().crearServidor();
+const servidor = crearServidorFactory().conectarServidor();
+
+await servidor.desconectar()

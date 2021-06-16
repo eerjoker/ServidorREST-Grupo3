@@ -5,8 +5,10 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "start": "nodemon ./src/main.js",
     "test": "echo \"Error: no test specified, try npm start\" && exit 1",
-    "start": "nodemon ./src/main.js"
+    "testCUReservas": "nodemon ./tests/reservas/negocio/testCUReservas.js",
+    "testRecordatoriosRouter": "nodemon ./tests/reservas/ruteo/testRecordatoriosRouter.js"
   },
   "keywords": [
     "server",

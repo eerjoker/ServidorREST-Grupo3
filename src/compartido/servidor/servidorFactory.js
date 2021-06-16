@@ -1,11 +1,15 @@
 import {crearServidor} from './servidor.js'
 
-function crearServidorFactory() {
-  const port = 8080
+function crearServidorFactory(port = 8080) {
+  const servidor = crearServidor()
   
   return {
-    crearServidor: async () => {
-      await crearServidor(port)
+    conectarServidor: async () => {
+      try {
+        await servidor.conectar(port)
+      } finally {
+        return servidor
+      }
     }
   }
 }

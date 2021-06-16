@@ -5,12 +5,12 @@ import { crearMailRecordatorioReservas } from '../modelos/MailRecordatorioReserv
 
 function crearCUEnviarRecordatorios (mailer, daoReservas, daoUsuarios) {
 
-  function validarDias(dias) {
-    dias = parseInt(dias)
-    if(isNaN(dias)){
+  function validarDias(cantDias) {
+    cantDias = parseInt(cantDias)
+    if(isNaN(cantDias)){
       throw crearErrorDatosInvalidos('La cantidad de días de contemplación no es válida.')
     }
-    return dias
+    return cantDias
   }
 
   async function enviarMailsPorUsuario(reservasPorUsuario, daoUsuarios) {
@@ -28,7 +28,7 @@ function crearCUEnviarRecordatorios (mailer, daoReservas, daoUsuarios) {
   return {
     async ejecutar(data) {
 
-      const diasAContemplar = validarDias(data.dias)
+      const diasAContemplar = validarDias(data.cantDias)
       
       const reservasProximas = await daoReservas.getReservasActivasProximas(diasAContemplar)
 

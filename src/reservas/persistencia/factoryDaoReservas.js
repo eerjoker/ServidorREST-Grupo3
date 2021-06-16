@@ -6,4 +6,4 @@ function getDaoReservas() {
   return daoReservas
 }
 
-export default { getDaoReservas }
+export { getDaoReservas }
