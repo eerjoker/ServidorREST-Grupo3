@@ -1,6 +1,6 @@
 import { crearCuCrearReserva } from '../../src/reservas/crearReserva.js'
 import { crearDaoReservasCache } from '../../src/reservas/persistencia/daoReservasCache.js'
-import { crearEnviadorDeMails } from '../../src/compartido/mail/crearEnviadorDeMails.js'
+import { crearEnviadorDeMails } from '../../src/compartido/mail/enviadorDeMails.js'
 
 const mailer = crearEnviadorDeMails("clubortemail@gmail.com", "wmhxyrhimevxswoz")
 
