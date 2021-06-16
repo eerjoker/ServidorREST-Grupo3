@@ -12,7 +12,7 @@ function generarPdf(Reserva) {
             doc.font ( 'Times-Roman' )
                 .fontSize ( 18 )
 
-            doc.image ( '../../assets/images/Encabezado.png' ) ;
+            doc.image ( '../../../../assets/images/Encabezado.png' ) ;
 
             doc.text ( 'DATOS DE SU RESERVA' ,  {
                 align: 'center' ,
