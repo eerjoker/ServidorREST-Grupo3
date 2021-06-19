@@ -10,4 +10,12 @@ const getCnxMail = () => {
     }
 } 
 
-export {getCnxMail}
+function getCnxStr() {
+    return process.env.CNX_STR
+  }
+  
+  function getMode() {
+    return process.env.MODE || 'TEST'
+  }
+
+export {getCnxMail, getCnxStr, getMode}
