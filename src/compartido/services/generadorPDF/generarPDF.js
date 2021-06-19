@@ -3,7 +3,7 @@
 import PDFDocument  from  'pdfkit'
 import  fs  from  'fs'
 
-function generarPdf(Reserva) {
+async function generarPdf(Reserva) {
             
         const  doc  =  new  PDFDocument ;
     
