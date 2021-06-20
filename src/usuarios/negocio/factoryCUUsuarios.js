@@ -1,9 +1,9 @@
 import {crearMailer} from '../../compartido/services/mail/factoryMailer.js'
-import {crearDaoUsuariosCache} from '../persistencia/daoUsuariosCache.js'
+import DaoFactory from "../persistencia/daoUsuariosFactory.js"
 import  {crearCURegistro} from './crearRegistro.js'
 
 const mailer = crearMailer()
-const daoUsuarios = crearDaoUsuariosCache()
+const daoUsuarios = DaoFactory.getDaoUsuarios()
 
 function crearFactoryCU() {
     

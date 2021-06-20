@@ -15,8 +15,8 @@ switch (getMode()) {
     daoUsuarios = daoUsuariosMongoDb
     break;
   default:
-    const { crearDaoUsuarios } = await import('./daoUsuariosCache.js')
-    const daoUsuariosCache = crearDaoUsuarios()
+    const { crearDaoUsuariosCache } = await import('./daoUsuariosCache.js')
+    const daoUsuariosCache = crearDaoUsuariosCache()
     daoUsuarios = daoUsuariosCache
     break;
 }
