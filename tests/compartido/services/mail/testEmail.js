@@ -3,4 +3,4 @@ import {getCnxMail} from "../../../../src/compartido/config.js"
 
 const mailer = crearEnviadorDeMails(getCnxMail().mail, getCnxMail().pass)
 
-mailer.enviarConHtml("clubortemail@gmail.com", "TestMailer", `<h1> Probando Mailer </h1>` )
+await mailer.enviarConHtml("clubortemail@gmail.com", "TestMailer", `<h1> Probando Mailer </h1>` )
