@@ -4,8 +4,8 @@ let daoUsuarios
 
 switch (getMode()) {
   case 'PROD':
-    const { crearMongoClient } = await import('./mongo/mongoClient.js')
-    const { crearDaoUsuariosMongoDb } = await import('./mongo/daoUsuariosMongoDb.js')
+    const { crearMongoClient } = await import('../../compartido/persistencia/mongo/mongoClient.js')
+    const { crearDaoUsuariosMongoDb } = await import('./daoUsuariosMongoDb.js')
     const { getCnxStr } = await import('../../compartido/config.js')
 
     const cnxStr = getCnxStr()
