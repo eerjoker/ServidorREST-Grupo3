@@ -60,7 +60,7 @@ function crearEnviadorDeMails(mail, pass){
                 throw crearErrorMailNoEnviado(`Error al enviar el mail. ${err}`)
             }
           },
-          enviarConAdjunto: async (to, subject, html, nombreDeArchivo, url) => {
+          enviarConAdjunto: async (to, subject, html,nombreDeArchivo, url) => {
             const mailOptions = {
                 from: remitente,
                 to: to,
