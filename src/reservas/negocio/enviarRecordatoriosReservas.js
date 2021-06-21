@@ -26,9 +26,9 @@ function crearCUEnviarRecordatorios (mailer, daoReservas, daoUsuarios) {
   }
 
   return {
-    async ejecutar(data) {
+    async ejecutar(cantDias) {
 
-      const diasAContemplar = validarDias(data.cantDias)
+      const diasAContemplar = validarDias(cantDias)
       
       const reservasProximas = await daoReservas.getReservasActivasProximas(diasAContemplar)
 
