@@ -1,6 +1,6 @@
 // Ezequiel Salomon
 
-import {crearUsuario} from "../modelos/usuario.js"
+import {crearUsuario} from "../modelos/Usuario.js"
 import { asuntoMailRegistro, generarCuerpoMailRegistro } from "../../compartido/services/mail/mailRegistro.js"
 import {crearErrorDniEnUso} from "../../compartido/errors/errorDniEnUso.js"
 
