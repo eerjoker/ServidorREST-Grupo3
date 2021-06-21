@@ -12,7 +12,7 @@ function crearCURegistro(daoUsuarios, mailer, asuntoMailRegistro, generarCuerpoM
            if(!added){
                  throw crearErrorDniEnUso(`Ya existe un usuario con el dni ${registroUsuario.dni}`)
             }
-           await mailer.enviarConHtml(datos.email, asuntoMailRegistro , generarCuerpoMailRegistro)
+           await mailer.enviarConHtml(datos.email, asuntoMailRegistro , generarCuerpoMailRegistro(datos))
         }
     } 
 }
