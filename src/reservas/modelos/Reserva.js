@@ -1,12 +1,13 @@
 
 class Reserva {
-    constructor({ nombre, dia, cancha, tiempo, email })
+    constructor({ nombre, fechaHora, cancha, email, activa, idUsuario })
  {
         this.nombre  =  nombre ;
-        this.dia  =  dia ;
+        this.fechaHora = fechaHora
         this.cancha  =  cancha ;
-        this.tiempo = tiempo;
         this.email = email;
+        this.activa = activa;
+        this.idUsuario = idUsuario;
     }
 }
     
