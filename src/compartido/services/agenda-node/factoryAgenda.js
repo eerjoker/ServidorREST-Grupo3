@@ -1,4 +1,4 @@
-import { crearAgenda } from "./Agenda.js"
+import { crearAgenda } from "./agenda.js"
 
 function crearFactoryAgenda() {
   return {

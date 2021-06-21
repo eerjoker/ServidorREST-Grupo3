@@ -2,16 +2,16 @@ import { crearServidorFactory } from '../../../src/compartido/servidor/servidorF
 import { crearCliente } from '../../clientePruebas.js'
 
 const port = 3000
-const servidorFactory = crearServidorFactory(port)
+const servidorFactory = crearServidorFactory()
 const cliente = crearCliente(`http://localhost:${port}/recordatorios`)
 const diasParaRecordatorio = 2
 
-let servidor;
+const servidor = servidorFactory.crearServidor()
 
 // se comenta porque envia mails a los usuarios
 
 // try {
-//   servidor = await servidorFactory.conectarServidor()
+//   await servidor.conectar(port)
 //   const { data } = await cliente.post({ cantDias: diasParaRecordatorio })
 //   console.log(data);
 // } catch(err) {

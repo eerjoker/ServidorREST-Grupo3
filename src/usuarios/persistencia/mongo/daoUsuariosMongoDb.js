@@ -1,5 +1,5 @@
 import { crearErrorUsuarioNoEncontrado } from "../../../compartido/errors/errorUsuarioNoEncotrado"
-import {crearUsuario} from "../../modelos/usuario.js"
+import {crearUsuario} from "../../modelos/Usuario.js"
 
 function crearDaoUsuariosMongoDb(db){
     
