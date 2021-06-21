@@ -10,6 +10,7 @@ function crearDaoUsuariosCache(){
                 return {added: 0}
             }else{
                 usuarios.push(usuario)
+                console.log('usuario agregado')
                 return {added: 1}
             }   
         },
