@@ -12,7 +12,7 @@ try {
   const CU_agendarCuPorHora = factoryCUAgendar.crearCU_agendarCuPorHora()
   const CU_RecordatoriosReservas = factoryCUReservas.crearCUEnviarRecordatorios()
 
-  const hora = 18
+  const hora = 10
   const cantDias = 2
 
   CU_agendarCuPorHora.ejecutar('CU_RecordatoriosReservas', hora, CU_RecordatoriosReservas, cantDias)

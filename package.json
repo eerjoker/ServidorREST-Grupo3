@@ -7,8 +7,8 @@
   "scripts": {
     "start": "set MODE=PROD&&node src/main.js",
     "test": "echo \"Error: no test specified, try npm start\" && exit 1",
-    "testCUReservas": "nodemon ./tests/reservas/negocio/testCUReservas.js",
-    "testRecordatoriosRouter": "nodemon ./tests/reservas/ruteo/testRecordatoriosRouter.js",
+    "testCUReservas": "set MODE=TEST&&node ./tests/reservas/negocio/testCUReservas.js",
+    "testRecordatoriosRouter": "set MODE=TEST&&node ./tests/reservas/ruteo/testRecordatoriosRouter.js",
     "testCURegistro": "node tests/usuarios/testRegistroCU.js",
     "testCURegistroMongo": "node tests/usuarios/testRegistroCUMongo.js",
     "testMailer": "node tests/compartido/services/mail/testEmail.js"
