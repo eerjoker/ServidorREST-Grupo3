@@ -3,4 +3,4 @@ import { crearFactoryCU } from '../../../src/reservas/negocio/factoryCUReservas.
 const factory = crearFactoryCU()
 
 // const CUEnviarRecordatorios = factory.crearCUEnviarRecordatorios()
-// CUEnviarRecordatorios.ejecutar({ cantDias: 2 }) // se comenta porque manda mail a usuarios
+// CUEnviarRecordatorios.ejecutar(2) // se comenta porque manda mail a usuarios
