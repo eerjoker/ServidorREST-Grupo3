@@ -10,20 +10,12 @@ const socio1 = {
     nombre: 'eze1',
     apellido: 'salo',
     email: 'clubortemail@gmail.com',
-    dni: '5',
-    password: 'eze1'
-  }
-
-  const socio2 = {
-    nombre: 'eze2',
-    apellido: 'salo',
-    email: 'clubortemail@gmail.com',
-    dni: '12',
+    dni: '16',
     password: 'eze1'
   }
 
   try {
-      await axios.post(`http://localhost:${port}/usuarios`, socio2)
+      await axios.post(`http://localhost:${port}/usuarios`, socio1)
       console.log('request completada 1')
       await servidorFinal.desconectar()
   } catch (error) {

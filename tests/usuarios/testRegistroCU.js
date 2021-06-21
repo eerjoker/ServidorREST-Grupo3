@@ -37,7 +37,7 @@ const socio1 = {
     nombre: 'eze1',
     apellido: 'salo',
     email: 'clubortemail@gmail.com',
-    dni: '56',
+    dni: '333',
     password: 'eze1'
 }
 
@@ -45,7 +45,7 @@ const socio2 = {
     nombre: 'eze2',
     apellido: 'salo',
     email: 'clubortemail@gmail.com',
-    dni: '78',
+    dni: '45',
     password: 'eze1'
   }
 
@@ -54,7 +54,7 @@ const socio2 = {
     return `<h1> Hola ${datos.nombre}, bienvenido a Ort Club!</h1>`        
     }
 
-const CU_registro = crearCURegistro(daoUsuarios, enviadorDeMails, 'test asunto', generarCuerpoMailRegistro(socio1))
+const CU_registro = crearCURegistro(daoUsuarios, enviadorDeMails, 'test asunto', generarCuerpoMailRegistro)
 
 await CU_registro.ejecutar(socio1)
 await CU_registro.ejecutar(socio2)
