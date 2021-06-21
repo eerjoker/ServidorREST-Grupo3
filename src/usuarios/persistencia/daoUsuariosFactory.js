@@ -6,7 +6,7 @@ switch (getMode()) {
   case 'PROD':
     const { crearMongoClient } = await import('./mongo/mongoClient.js')
     const { crearDaoUsuariosMongoDb } = await import('./mongo/daoUsuariosMongoDb.js')
-    const { getCnxStr } = await import('../../config.js')
+    const { getCnxStr } = await import('../../compartido/config.js')
 
     const cnxStr = getCnxStr()
     const mongoClient = crearMongoClient(cnxStr)

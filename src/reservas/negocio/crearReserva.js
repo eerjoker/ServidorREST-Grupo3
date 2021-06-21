@@ -9,7 +9,7 @@ function crearCuCrearReserva(daoReserva, mailer) {
             const reserva = new Reserva(datos)
             await daoReserva.guardar(reserva)
             await generarPDF(reserva)
-            await mailer.enviarConAdjunto(`remitente`, reserva.email , `Prueba Text`, `Prueba con texto plano`, `./${reserva.nombre}.pdf`)
+            await mailer.enviarConAdjunto(reserva.email , `Reserva Confirmada!`, `Adjunto datos de su reserva`, `${reserva.nombre}.pdf`,`./${reserva.nombre}.pdf`)
         }
     }
 }

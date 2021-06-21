@@ -9,7 +9,7 @@ function crearRouterRecordatorios() {
   router.post('/', async (req, res, next) => {
     try {
       const CU_EnviarRecordatorios = factoryCU.crearCUEnviarRecordatorios()
-      await CU_EnviarRecordatorios.ejecutar(req.body)
+      await CU_EnviarRecordatorios.ejecutar(req.body.cantDias)
       res.status(200).json({ message: 'Recordatorios enviados' })
     } catch (err) {
       next(err)

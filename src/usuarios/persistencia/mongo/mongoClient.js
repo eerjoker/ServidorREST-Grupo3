@@ -9,7 +9,7 @@ function crearMongoClient(cnxStr) {
     return {
       connect: async () => {
         await client.connect()
-        const db = client.db('TP2 Grupo3 Final')
+        const db = client.db('TP2Grupo3Final')
         return db
       },
       close: async () => {

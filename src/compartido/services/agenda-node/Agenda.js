@@ -1,7 +1,7 @@
 // Esteban Rivera
 
-import { crearAdministradorReglas } from './administradores/AdministradorReglas.js'
-import { crearAdministradorEventos } from './administradores/AdministradorEventos.js'
+import { crearAdministradorReglas } from './administradores/administradorReglas.js'
+import { crearAdministradorEventos } from './administradores/administradorEventos.js'
 
 /**
  * Crea una agenda que guarda y ejecuta eventos en tiempo real según
