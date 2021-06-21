@@ -5,8 +5,8 @@ function crearDaoUsuariosMongoDb(db){
     
     const usuarios = db.collection('usuarios')
     return{
-        add: async (usuario, claveUnica) => {
-            const existe = await usuarios.findOne({ id })
+        add: async (usuario) => {
+            const existe = await usuarios.findOne({ id: usuario.id })
             if(existe){            
                 return {added: 0}
             }else{
@@ -17,24 +17,23 @@ function crearDaoUsuariosMongoDb(db){
         getById: async (id) => {
             const uBuscado = await usuarios.findOne({ id })
             if (buscado) {
-                console.log('cliente encontrado!')
                 return buscado
               } else {
-                throw crearErrorClienteNoEncontrado()
+                throw crearErrorUsuarioNoEncontrado()
               }
             
         },
         getByDni: async (dni) => {
             const registros = await usuarios.find({ dni }).toArray()
-            const estudiantesAux = registros.map(reg => crearUsuario(reg))
-            return estudiantesAux
+            const usuariosAux = registros.map(reg => crearUsuario(reg))
+            return usuariosAux
         },
         getAll: async () => {
             const registros = await usuarios.find({}).toArray()
-            const estudiantesAux = registros.map(reg => crearUsuario(reg))
-            return estudiantesAux
+            const usuariosAux = registros.map(reg => crearUsuario(reg))
+            return usuariosAux
         }
     }
 }
 
-export {crearDaoUsuariosCache}
+export {crearDaoUsuariosMongoDb}

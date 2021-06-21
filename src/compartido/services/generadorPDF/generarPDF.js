@@ -21,9 +21,8 @@ async function generarPdf(Reserva) {
             } ) ;
 
             doc.text ( "Nombre del cliente:"  +  Reserva.nombre ,  {  align : 'left' ,  lineGap : 30  } )
-            doc.text ( "Dia de reserva:"  +  Reserva.dia ,  {  align : 'left' ,  lineGap : 30  } )
+            doc.text ( "Dia y hora de reserva:"  +  Reserva.fechaHora ,  {  align : 'left' ,  lineGap : 30  } )
             doc.text ( "Cancha reservada:"  +  Reserva.cancha ,  {  align : 'left' ,  lineGap : 30  } )
-            doc.text ( "Cantidad de tiempo reservado:"  +  Reserva.tiempo ,  {  align : 'left' ,  lineGap : 150  } )
 
             doc.text ( 'Gracias por elegirnos!' ,  {
                 align: 'center' ,

@@ -8,7 +8,7 @@ const dao = crearDaoReservasCache()
  
 const cu = crearCuCrearReserva(dao, mailer)
 
-const datos = { nombre: 'antonella' , dia: '30/06/2021' , cancha: 'numero 15' , tiempo: '2hs', email:'antonellacastellano97@gmail.com'}
+const datos = { nombre: 'antonella' , fechaHora: new Date(2021, 6, 30, 10), cancha: 'numero 15' , email:'antonellacastellano97@gmail.com', activa: true, idUsuario: 1}
 
 await cu.ejecutar(datos)
 console.log(dao)

@@ -6,7 +6,7 @@ const factoryCU = crearFactoryCU();
 function crearRouterReserva() {
   const router = express.Router();
 
-  router.post("/", async (req, res) => {
+  router.post("/crear", async (req, res) => {
     try {
       const CU_confirmarReserva = factoryCU.crearCU_confirmarReserva();
       const reserva = await CU_confirmarReserva.ejecutar(req.body);
