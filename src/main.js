@@ -6,20 +6,25 @@ try {
   // Agenda eventos temporizados
   // TODO: hacerlo en aplicacion fuera del main
 
-  const factoryCUAgendar = crearFactoryCUAgendar()
-  const factoryCUReservas = crearFactoryCU()
-  
-  const CU_agendarCuPorHora = factoryCUAgendar.crearCU_agendarCuPorHora()
-  const CU_RecordatoriosReservas = factoryCUReservas.crearCUEnviarRecordatorios()
+  const factoryCUAgendar = crearFactoryCUAgendar();
+  const factoryCUReservas = crearFactoryCU();
 
-  const hora = 10
-  const cantDias = 2
+  const CU_agendarCuPorHora = factoryCUAgendar.crearCU_agendarCuPorHora();
+  const CU_RecordatoriosReservas =
+    factoryCUReservas.crearCUEnviarRecordatorios();
 
-  CU_agendarCuPorHora.ejecutar('CU_RecordatoriosReservas', hora, CU_RecordatoriosReservas, cantDias)
+  const hora = 10;
+  const cantDias = 2;
 
-} catch { }
+  CU_agendarCuPorHora.ejecutar(
+    "CU_RecordatoriosReservas",
+    hora,
+    CU_RecordatoriosReservas,
+    cantDias
+  );
+} catch {}
 
-const port = 8080
+const port = process.env.PORT || 8080;
 const servidor = crearServidorFactory().crearServidor();
 
-await servidor.conectar(port)
+await servidor.conectar(port);

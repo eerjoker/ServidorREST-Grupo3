@@ -1,5 +1,6 @@
 class Reserva {
   constructor({
+    idReserva,
     nombre,
     fechaHora,
     cancha,
@@ -8,6 +9,7 @@ class Reserva {
     cancelada,
     idUsuario,
   }) {
+    this.idReserva = idReserva;
     this.nombre = nombre;
     this.fechaHora = fechaHora;
     this.cancha = cancha;
