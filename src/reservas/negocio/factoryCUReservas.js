@@ -1,11 +1,12 @@
 import { crearMailer } from "../../compartido/services/mail/factoryMailer.js";
 import { crearCuCrearReserva } from "./crearReserva.js";
+import { crearCUCancelarReserva } from "./cancelarReserva.js";
 import { crearCUEnviarRecordatorios } from "./enviarRecordatoriosReservas.js";
 import { getDaoReservas } from "../persistencia/factoryDaoReservas.js";
 import { crearDaoUsuariosCache } from "../../usuarios/persistencia/daoUsuariosCache.js";
 
 const mailer = crearMailer();
-const daoReservas = getDaoReservas();
+const daoReservas = await getDaoReservas();
 const daoUsuarios = crearDaoUsuariosCache();
 
 function crearFactoryCU() {
@@ -23,7 +24,7 @@ function crearFactoryCU() {
       return CUEnviarRecordatorios;
     },
     crearCUCancelarReserva() {
-      const CUCancelarReserva = crearCUCancelarReserva(mailer, daoReservas);
+      const CUCancelarReserva = crearCUCancelarReserva(daoReservas, mailer);
       return CUCancelarReserva;
     },
   };
