@@ -12,7 +12,7 @@ import axios from "axios";
     "Prueba de cancelacion de reserva--------------------------------"
   );
   try {
-    const res = await axios.put(`http://localhost:8080/reserva/cancelar/21`);
+    const res = await axios.put(`http://localhost:8080/reserva/cancelar/22`);
     console.log("RES: ", res.data);
   } catch (err) {
     console.log("ERROR: ", err.response.data);
