@@ -48,6 +48,7 @@ function crearDaoReservasMongo(db) {
       return {
         message: "Cancelacion exitosa.",
         cancelItem: reserva.value,
+        cant: reserva.lastErrorObject.n,
       };
     },
   };

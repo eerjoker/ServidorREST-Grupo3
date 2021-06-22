@@ -12,7 +12,18 @@ import axios from "axios";
     "Prueba de cancelacion de reserva--------------------------------"
   );
   try {
-    const res = await axios.put(`http://localhost:8080/reserva/cancelar/22`);
+    const res = await axios.put(`http://localhost:8080/reserva/cancelar/1`);
+    console.log("RES: ", res.data);
+  } catch (err) {
+    console.log("ERROR: ", err.response.data);
+  }
+  console.log("-------------------------------------------------------------");
+
+  console.log(
+    "Prueba de cancelacion de reserva inexistente--------------------------------"
+  );
+  try {
+    const res = await axios.put(`http://localhost:8080/reserva/cancelar/31000`);
     console.log("RES: ", res.data);
   } catch (err) {
     console.log("ERROR: ", err.response.data);
