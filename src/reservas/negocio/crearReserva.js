@@ -7,9 +7,9 @@ import { crearErrorDeReservaVacia }  from "../../compartido/errors/errorDeReserv
 function crearCuCrearReserva(daoReserva, mailer) {
   return {
     async ejecutar(datos) {
-          const reserva = new Reserva(datos);
-          if (datos==null) {
-        throw crearErrorReservaVacia("los datos de la reserva estan vacios");
+      const reserva = new Reserva(datos);
+      if (JSON.stringify(reserva)== "{}" ) {
+        throw crearErrorDeReservaVacia("los datos de la reserva estan vacios");
       }
       await daoReserva.guardar(reserva);
       await generarPDF(reserva);

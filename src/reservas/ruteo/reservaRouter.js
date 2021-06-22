@@ -10,7 +10,7 @@ function crearRouterReserva() {
     try {
       const CU_confirmarReserva = factoryCU.crearCU_confirmarReserva();
       const reserva = await CU_confirmarReserva.ejecutar(req.body);
-      return res.json({ reserva });
+      return res.json({ msg: 'ok' });
     } catch (err) {
       return res.status(404).send({ error: err.message });
     }
