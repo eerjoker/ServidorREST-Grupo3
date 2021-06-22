@@ -1,7 +1,6 @@
 import moment from 'moment'
 
 function ConsultarClima(pronosticador) {
-
     return {
         ejecutar: async (fecha, latitud, longitud) => {     
         try {

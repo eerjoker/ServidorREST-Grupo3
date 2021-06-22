@@ -2,7 +2,6 @@ import { formatedTime } from './timeHandler.js'
 import axios from 'axios'
 
 class Pronosticador {
-  //pasarla al .env
   constructor (apiKey) {
     this.apiKey = apiKey
   }
