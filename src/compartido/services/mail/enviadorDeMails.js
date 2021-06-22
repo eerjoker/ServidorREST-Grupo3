@@ -39,7 +39,6 @@ function crearEnviadorDeMails(mail, pass){
 
             try {
                 await transporter.sendMail(mailOptions)
-                console.log(`mail enviado`)
             } catch (err) {
                 throw crearErrorMailNoEnviado(`Error al enviar el mail. ${err}`)
             } 
@@ -55,7 +54,6 @@ function crearEnviadorDeMails(mail, pass){
 
             try {
                 await transporter.sendMail(mailOptions)
-                console.log(`mail enviado`)
             } catch (err) {
                 throw crearErrorMailNoEnviado(`Error al enviar el mail. ${err}`)
             }
@@ -74,7 +72,6 @@ function crearEnviadorDeMails(mail, pass){
 
             try {
                 await transporter.sendMail(mailOptions)
-                console.log(`mail enviado`)
             } catch (err) {
                 throw crearErrorMailNoEnviado(`Error al enviar el mail. ${err}`)
             }

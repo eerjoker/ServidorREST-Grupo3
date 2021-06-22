@@ -29,8 +29,6 @@ async function generarPdf(Reserva) {
                 lineGap : 50 ,
             } ) ;
 
-            console.log( 'pdf generado' ) ;
-
             doc.end ( ) ;
         }
 
