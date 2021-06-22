@@ -1,4 +1,4 @@
-import { crearServidorFactory } from "../src/compartido/servidor/servidorFactory.js";
+import { crearServidorFactory } from "../../../src/compartido/servidor/servidorFactory.js";
 import axios from "axios";
 
 (async function main() {
@@ -12,7 +12,7 @@ import axios from "axios";
     "Prueba de cancelacion de reserva--------------------------------"
   );
   try {
-    const res = await axios.put(`http://localhost:8080/reserva/cancelar/1`);
+    const res = await axios.put(`http://localhost:8080/reserva/cancelar/21`);
     console.log("RES: ", res.data);
   } catch (err) {
     console.log("ERROR: ", err.response.data);
@@ -29,4 +29,6 @@ import axios from "axios";
     console.log("ERROR: ", err.response.data);
   }
   console.log("-------------------------------------------------------------");
+
+  await servidor.desconectar();
 })();

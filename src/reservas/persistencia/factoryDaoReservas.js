@@ -6,8 +6,8 @@ async function getDaoReservas() {
     const daoReservas = crearDaoReservasCache();
     return daoReservas;
   }
-  const { crearMongoClient } = await import("./mongo/mongoClient.js");
-  const { crearDaoReservasMongo } = await import("./mongo/daoReservaMongo.js");
+  const { crearMongoClient } = await import("../../compartido/persistencia/mongo/mongoClient.js");
+  const { crearDaoReservasMongo } = await import("./daoReservaMongo.js");
 
   const mongoClient = crearMongoClient(getCnxStr());
   const db = await mongoClient.connect();

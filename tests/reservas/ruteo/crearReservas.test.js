@@ -1,4 +1,4 @@
-import { crearServidorFactory } from "../src/compartido/servidor/servidorFactory.js";
+import { crearServidorFactory } from "../../../src/compartido/servidor/servidorFactory.js";
 import axios from "axios";
 
 (async function main() {
@@ -15,11 +15,11 @@ import axios from "axios";
     nombre: "antonella 5",
     fechaHora: new Date(),
     cancha: "6",
-    email: "fakita.teve@gmail.com",
+    email: "clubortemail@gmail.com",
     activa: true,
     cancelada: false,
     idUsuario: 39175536,
-    idReserva: 19,
+    idReserva: 21,
   };
 
   try {
@@ -42,4 +42,6 @@ import axios from "axios";
     console.log("ERROR: ", err.response.data);
   }
   console.log("-------------------------------------------------------------");
+
+  await servidor.desconectar();
 })();
