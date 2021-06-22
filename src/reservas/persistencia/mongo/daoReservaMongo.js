@@ -11,6 +11,7 @@ function crearDaoReservasMongo(db) {
       return reservasActivas;
     },
     getReservasActivasProximas: async (diasLimite) => {
+      const reservasPorUsuario = {};
       const maniana = new Date();
       maniana.setDate(maniana.getDate() + 1);
       const fechaLimite = new Date();
@@ -24,7 +25,15 @@ function crearDaoReservasMongo(db) {
           },
         })
         .toArray();
-      return res;
+
+      for (const reserva of res) {
+        if (Array.isArray(reservasPorUsuario[reserva.idUsuario])) {
+          reservasPorUsuario[reserva.idUsuario].push(reserva);
+        } else {
+          reservasPorUsuario[reserva.idUsuario] = [reserva];
+        }
+      }
+      return reservasPorUsuario;
     },
     cancelOneReservation: async (id) => {
       const reserva = await dbReservas.findOneAndUpdate(
