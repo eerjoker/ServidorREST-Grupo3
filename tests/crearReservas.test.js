@@ -19,7 +19,7 @@ import axios from "axios";
     activa: true,
     cancelada: false,
     idUsuario: 39175536,
-    idReserva: 18,
+    idReserva: 19,
   };
 
   try {
