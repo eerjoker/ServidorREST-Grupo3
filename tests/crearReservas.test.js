@@ -12,18 +12,31 @@ import axios from "axios";
     "Prueba de creacion y confirmacion de reserva--------------------------------"
   );
   const body = {
-    nombre: "ivan 3",
+    nombre: "antonella 5",
     fechaHora: new Date(),
-    cancha: "1",
-    email: "ivan@outlook.com",
+    cancha: "6",
+    email: "fakita.teve@gmail.com",
     activa: true,
     cancelada: false,
-    idUsuario: 38175536,
-    idReserva: 17,
+    idUsuario: 39175536,
+    idReserva: 19,
   };
 
   try {
     const res = await axios.post("http://localhost:8080/reserva/crear", body);
+    console.log("RES: ", res.data);
+  } catch (err) {
+    console.log("ERROR: ", err.response.data);
+  }
+  console.log("-------------------------------------------------------------");
+
+ console.log(
+    "Prueba de error en caso de reserva vacia--------------------------------"
+  );
+  const body2 = {};
+
+  try {
+    const res = await axios.post("http://localhost:8080/reserva/crear", body2);
     console.log("RES: ", res.data);
   } catch (err) {
     console.log("ERROR: ", err.response.data);

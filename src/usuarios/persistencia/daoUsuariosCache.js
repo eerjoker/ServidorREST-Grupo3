@@ -1,4 +1,6 @@
-const usuarios = []
+const usuario1 = { id: 100, nombre: 'Usuario1', mail: 'clubortemail@gmail.com'}
+const usuario2 = { id: 101, nombre: 'Usuario2', mail: 'clubortemail@gmail.com'}
+const usuarios = [ usuario1, usuario2 ]
 
 function crearDaoUsuariosCache(){
     return{
