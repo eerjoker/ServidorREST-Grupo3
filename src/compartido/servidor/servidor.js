@@ -8,6 +8,7 @@ function crearServidor(routers) {
   app.use('/usuarios', routers.routerUsuarios)
      .use('/reserva', routers.routerReservas)
      .use('/recordatorios', routers.routerRecordatorios)
+     .use('/clima', routers.routerClima)
 
   let server = null
 

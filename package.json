@@ -11,7 +11,8 @@
     "testRecordatoriosRouter": "nodemon ./tests/reservas/ruteo/testRecordatoriosRouter.js",
     "testCURegistro": "node tests/usuarios/testRegistroCU.js",
     "testCURegistroMongo": "node tests/usuarios/testRegistroCUMongo.js",
-    "testMailer": "node tests/compartido/services/mail/testEmail.js"
+    "testMailer": "node tests/compartido/services/mail/testEmail.js",
+    "testClima": "node tests/clima/clima.test.js"
   },
   "keywords": [
     "server",
