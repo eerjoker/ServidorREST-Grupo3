@@ -21,7 +21,7 @@ function crearRouterRegistro() {
       } else if (error.type === 'ERROR_DATOS_INVALIDOS') {
         res.status(400)
       } else if (error.type === 'ERR_USER_NOT_FOUND'){
-        res.status(400)
+        res.status(404)
       }
       else {
         res.status(500)
