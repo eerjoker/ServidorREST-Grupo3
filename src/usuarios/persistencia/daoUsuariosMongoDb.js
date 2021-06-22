@@ -1,12 +1,12 @@
-import { crearErrorUsuarioNoEncontrado } from "../../../compartido/errors/errorUsuarioNoEncotrado.js"
-import {crearUsuario} from "../../modelos/Usuario.js"
+import { crearErrorUsuarioNoEncontrado } from "../../compartido/errors/errorUsuarioNoEncotrado.js"
+import {crearUsuario} from "../modelos/Usuario.js"
 
 function crearDaoUsuariosMongoDb(db){
     
     const usuarios = db.collection('usuarios')
     return{
         add: async (usuario) => {
-            const existe = await usuarios.findOne({ id: usuario.id })
+            const existe = await usuarios.findOne({ dni: usuario.dni })
             if(existe){            
                 return {added: 0}
             }else{
