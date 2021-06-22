@@ -16,15 +16,24 @@ function crearRouterReserva() {
     }
   });
 
-  router.put("/cancelar/:idReserva", async (req, res) => {
+  router.put("/cancelar/:idReserva", async (req, res, next) => {
     const { idReserva } = req.params;
     try {
       const cancelarReserva = factoryCU.crearCUCancelarReserva();
       const result = await cancelarReserva.ejecutar(idReserva);
       return res.send(result);
     } catch (err) {
-      return res.status(404).send({ error: err.message });
+      next(err);
     }
+  });
+
+  router.use((err, req, res, next) => {
+    if (err.type === "ERROR_ID_INVALIDO") {
+      res.status(400);
+    } else {
+      res.status(500);
+    }
+    res.json({ message: err.message });
   });
 
   return router;

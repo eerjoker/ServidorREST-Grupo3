@@ -18,4 +18,15 @@ import axios from "axios";
     console.log("ERROR: ", err.response.data);
   }
   console.log("-------------------------------------------------------------");
+
+  console.log(
+    "Prueba de cancelacion de reserva con ID invalido---------------------"
+  );
+  try {
+    const res = await axios.put(`http://localhost:8080/reserva/cancelar/asd`);
+    console.log("RES: ", res.data);
+  } catch (err) {
+    console.log("ERROR: ", err.response.data);
+  }
+  console.log("-------------------------------------------------------------");
 })();

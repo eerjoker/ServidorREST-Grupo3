@@ -1,8 +1,13 @@
+import { crearErrorIdInvalido } from "../../compartido/errors/errorIdInvalido.js";
 // Ivan Riboldi
 
 function crearCUCancelarReserva(dao, mailer) {
   return {
     async ejecutar(idReserva) {
+      const idReservaParsed = parseInt(idReserva);
+      if (isNaN(idReservaParsed)) {
+        throw crearErrorIdInvalido("El ID de la reserva debe ser numerico.");
+      }
       const { cancelItem } = await dao.cancelOneReservation(idReserva);
       if (!cancelItem) return;
       mailer.enviarConHtml(
