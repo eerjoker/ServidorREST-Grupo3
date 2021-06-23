@@ -3,11 +3,11 @@ import { crearCuCrearReserva } from "./crearReserva.js";
 import { crearCUCancelarReserva } from "./cancelarReserva.js";
 import { crearCUEnviarRecordatorios } from "./enviarRecordatoriosReservas.js";
 import { getDaoReservas } from "../persistencia/factoryDaoReservas.js";
-import { crearDaoUsuariosCache } from "../../usuarios/persistencia/daoUsuariosCache.js";
+import DaoUsuariosFactory from "../../usuarios/persistencia/daoUsuariosFactory.js";
 
 const mailer = crearMailer();
 const daoReservas = await getDaoReservas();
-const daoUsuarios = crearDaoUsuariosCache();
+const daoUsuarios = DaoUsuariosFactory.getDaoUsuarios();
 
 function crearFactoryCU() {
   return {
