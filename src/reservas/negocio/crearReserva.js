@@ -11,7 +11,7 @@ function crearCuCrearReserva(daoReserva, mailer) {
       if (JSON.stringify(reserva)== "{}" ) {
         throw crearErrorDeReservaVacia("los datos de la reserva estan vacios");
       }
-      await daoReserva.guardar(reserva);
+      const nuevaReserva= await daoReserva.guardar(reserva);
       await generarPDF(reserva);
       await mailer.enviarConAdjunto(
         reserva.email,
@@ -20,6 +20,7 @@ function crearCuCrearReserva(daoReserva, mailer) {
         `${reserva.nombre}.pdf`,
         `./${reserva.nombre}.pdf`
       );
+      return nuevaReserva;
     },
   };
 }

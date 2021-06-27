@@ -10,7 +10,7 @@ const socio1 = {
     nombre: 'eze1',
     apellido: 'salo',
     email: 'clubortemail@gmail.com',
-    dni: '16',
+    dni: '36',
     password: 'eze1'
   }
 

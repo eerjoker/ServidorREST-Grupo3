@@ -1,3 +1,4 @@
+import { crearErrorIdInexistente } from "../../compartido/errors/errorReservaIdInexistente.js";
 import { crearErrorIdInvalido } from "../../compartido/errors/errorIdInvalido.js";
 // Ivan Riboldi
 
@@ -8,7 +9,8 @@ function crearCUCancelarReserva(dao, mailer) {
       if (isNaN(idReservaParsed)) {
         throw crearErrorIdInvalido("El ID de la reserva debe ser numerico.");
       }
-      const { cancelItem } = await dao.cancelOneReservation(idReserva);
+      const { cancelItem, cant } = await dao.cancelOneReservation(idReserva);
+      if (!cant) throw crearErrorIdInexistente("Reserva inexistente");
       if (!cancelItem) return;
       mailer.enviarConHtml(
         cancelItem.email,

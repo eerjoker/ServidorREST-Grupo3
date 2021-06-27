@@ -10,7 +10,7 @@ function crearRouterReserva() {
     try {
       const CU_confirmarReserva = factoryCU.crearCU_confirmarReserva();
       const reserva = await CU_confirmarReserva.ejecutar(req.body);
-      return res.json({ msg: 'ok' });
+      return res.json({ msg: "ok", data: reserva });
     } catch (err) {
       return res.status(404).send({ error: err.message });
     }
@@ -30,6 +30,8 @@ function crearRouterReserva() {
   router.use((err, req, res, next) => {
     if (err.type === "ERROR_ID_INVALIDO") {
       res.status(400);
+    } else if (err.type === "ERROR_ID_INEXISTENTE") {
+      res.status(404);
     } else {
       res.status(500);
     }

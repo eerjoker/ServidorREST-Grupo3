@@ -13,8 +13,8 @@
     "testCURegistroMongo": "node tests/usuarios/testRegistroCUMongo.js",
     "testMailer": "node tests/compartido/services/mail/testEmail.js",
     "testClima": "node tests/clima/clima.test.js",
-    "test:crearReservas": "set MODE=PROD&&node ./tests/crearReservas.test.js",
-    "test:cancelarReservas": "MODE=PROD node ./tests/cancelarReserva.test.js"
+    "test:crearReservas": "set MODE=PROD&&node ./tests/reservas/ruteo/crearReservas.test.js",
+    "test:cancelarReservas": "MODE=PROD node ./tests/reservas/ruteo/cancelarReserva.test.js"
   },
   "keywords": [
     "server",
