@@ -6,11 +6,11 @@ async function main() {
 
   await servidor.conectar(3000);
 
-  const date = new Date(2021, 5, 25);
+  const date = new Date(2021, 5, 30);
   const latitud = -36.0;
   const longitud = -60.0;
   const dateFail = "asd";
-  const dateOutOfRange = new Date(2021, 6, 25);
+  const dateOutOfRange = new Date(2021, 6, 30);
 
   console.log("Clima test exitoso");
   try {
@@ -19,7 +19,7 @@ async function main() {
     );
     console.log("REST SERVER RESULT: ", data);
   } catch (err) {
-    console.log("ERROR", err.response.data);
+    console.log("ERROR", err.response);
   }
 
   console.log("Clima test fallido");
@@ -29,7 +29,10 @@ async function main() {
     );
     console.log("REST SERVER RESULT: ", data);
   } catch (err) {
-    console.log("ERROR", err.response.data);
+    console.log({
+      message: err.response.data.message,
+      status: err.response.status,
+    });
   }
 
   console.log("Clima test fuera de rango");
@@ -39,7 +42,10 @@ async function main() {
     );
     console.log("REST SERVER RESULT: ", data);
   } catch (err) {
-    console.log("ERROR", err.response.data);
+    console.log({
+      message: err.response.data.message,
+      status: err.response.status,
+    });
   }
 }
 

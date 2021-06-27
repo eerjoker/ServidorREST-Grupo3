@@ -1,18 +1,12 @@
-import moment from 'moment'
+import { crearFecha } from "../modelos/fecha.js";
 
 function ConsultarClima(pronosticador) {
-    return {
-        ejecutar: async (fecha, latitud, longitud) => {     
-        try {
-            const nuevaFecha = moment(new Date(fecha))
-            const fechaFormateada = nuevaFecha.format('dddd DD MMMM')
-            if(fechaFormateada !== 'Fecha inválida'){
-                return await pronosticador.getWeather(fechaFormateada, latitud, longitud)
-            }
-        } catch (error) {
-            throw new Error('argumentos invalidos: fecha mal formada')
-        }
-    }}
+  return {
+    ejecutar: async (fecha, latitud, longitud) => {
+      const fechaClima = crearFecha(fecha);
+      return await pronosticador.getWeather(fechaClima, latitud, longitud);
+    },
+  };
 }
 
-export default ConsultarClima
+export default ConsultarClima;

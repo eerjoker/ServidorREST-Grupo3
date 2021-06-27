@@ -5,7 +5,7 @@ const router = express.Router();
 const CasoDeUso_ConsultarClima = CUFactory.crearCU_ConsultarClima();
 
 const crearClimaRoute = () => {
-  router.get("/", async (req, res) => {
+  router.get("/", async (req, res, next) => {
     const { date, lat, long } = req.query;
     try {
       const climaData = await CasoDeUso_ConsultarClima.ejecutar(
@@ -13,11 +13,21 @@ const crearClimaRoute = () => {
         lat,
         long
       );
-      const msg = climaData ? "ok" : "No encontramos datos para esa fecha";
-      res.json({ msg, clima: climaData || null });
+      res.json({ msg: "ok", clima: climaData });
     } catch (e) {
-      res.status(400).json({ msg: e.message });
+      next(e);
     }
+  });
+
+  router.use((err, req, res, next) => {
+    if (err.type === "ERROR_FORMATO_FECHA_INCORRECTO") {
+      res.status(400);
+    } else if (err.type === "ERROR_CLIMA_NO_ENCONTRADO") {
+      res.status(404);
+    } else {
+      res.status(500);
+    }
+    res.json({ message: err.message });
   });
 
   return router;
